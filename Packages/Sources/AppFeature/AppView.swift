@@ -1,10 +1,16 @@
+import HomeFeature
 import LifetimeTracker
+import SettingsFeature
+import SharedModels
 import SharedViews
 import SwiftUI
 
 public struct AppView: View {
 
     @ObserveInjection private var iO
+
+    @State private var settingsModel = SettingsModel()
+    @State private var homeModel = HomeModel()
 
     public init() {
         #if DEBUG
@@ -18,8 +24,17 @@ public struct AppView: View {
     }
 
     public var body: some View {
+        TabView {
+            HomeView(model: homeModel)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
 
-        Text("Hello, World!")
-            .enableInjection()
+            SettingsView(model: settingsModel)
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+        }
+        .enableInjection()
     }
 }

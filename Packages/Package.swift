@@ -9,12 +9,14 @@ let package = Package(
         .iOS(.v17),
     ],
     products: [
-        .singleTargetLibrary("AppFeature")
+        .singleTargetLibrary("AppFeature"),
+        .singleTargetLibrary("PlaybookFeature"),
     ],
     dependencies: [
         .package(url: "https://github.com/krzysztofzablocki/Inject.git", exact: "1.2.3"),
         .package(url: "https://github.com/realm/SwiftLint", exact: "0.52.3"),
         .package(url: "https://github.com/krzysztofzablocki/LifetimeTracker.git", exact: "1.8.2"),
+        .package(url: "https://github.com/playbook-ui/playbook-ios", exact: "0.3.4"),
     ],
     targets: [
         .target(
@@ -65,6 +67,16 @@ let package = Package(
                 .product(name: "LifetimeTracker", package: "LifetimeTracker"),
             ]
         ),
+        .target(
+            name: "PlaybookFeature",
+            dependencies: [
+                "HomeFeature",
+                "SharedModels",
+                "Inject",
+                .product(name: "Playbook", package: "playbook-ios"),
+                .product(name: "PlaybookUI", package: "playbook-ios"),
+            ]
+        ),
     ]
 )
 
@@ -78,6 +90,6 @@ package.targets = package.targets.map { target in
 
 extension Product {
     static func singleTargetLibrary(_ name: String) -> Product {
-        .library(name: name, targets: [name])
+        .library(name: name, type: .dynamic, targets: [name])
     }
 }

@@ -1,8 +1,35 @@
-//
-//  File.swift
-//  
-//
-//  Created by Arek Brodowski on 24/01/2024.
-//
+import SharedModels
+import SharedViews
+import SwiftUI
 
-import Foundation
+public struct SettingsView: View {
+    @ObserveInjection private var iO
+
+    @Bindable
+    public var model: SettingsModel
+
+    public init(model: SettingsModel) {
+        self.model = model
+    }
+
+    public var body: some View {
+        NavigationStack {
+            List {
+                ForEach(Array(SettingsModel.Subscreen.allCases)) { subscreen in
+                    NavigationLink(subscreen.displayString, value: subscreen)
+                }
+            }
+            .navigationDestination(for: SettingsModel.Subscreen.self) { subscreen in
+                switch subscreen {
+                case .betaSettings:
+                #if DEBUG
+                    BetaSettingsView()
+                #endif
+                case .settings:
+                    EmptyView()
+                }
+            }
+        }
+        .enableInjection()
+    }
+}
