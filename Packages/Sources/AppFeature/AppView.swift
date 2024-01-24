@@ -1,5 +1,6 @@
 import HomeFeature
 import LifetimeTracker
+import MemoryLeakFeature
 import SettingsFeature
 import SharedModels
 import SharedViews
@@ -33,6 +34,11 @@ public struct AppView: View {
             SettingsView(model: settingsModel)
                 .tabItem {
                     Label("Settings", systemImage: "gear")
+                }
+
+            MemoryLeakView()
+                .tabItem {
+                    Label("Memory leak", systemImage: "memorychip")
                 }
         }
         .enableInjection()

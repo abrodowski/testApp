@@ -27,6 +27,7 @@ let package = Package(
                 "HomeFeature",
                 "SettingsFeature",
                 .product(name: "LifetimeTracker", package: "LifetimeTracker"),
+                "MemoryLeakFeature",
             ]
         ),
         .testTarget(
@@ -71,10 +72,19 @@ let package = Package(
             name: "PlaybookFeature",
             dependencies: [
                 "HomeFeature",
+                "SettingsFeature",
+                "MemoryLeakFeature",
                 "SharedModels",
                 "Inject",
                 .product(name: "Playbook", package: "playbook-ios"),
                 .product(name: "PlaybookUI", package: "playbook-ios"),
+            ]
+        ),
+        .target(
+            name: "MemoryLeakFeature",
+            dependencies: [
+                "SharedViews",
+                "SharedModels",
             ]
         ),
     ]
