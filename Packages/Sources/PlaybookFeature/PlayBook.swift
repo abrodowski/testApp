@@ -1,9 +1,11 @@
 import Foundation
 import HomeFeature
 import Inject
+import MemoryLeakFeature
 @_exported import Playbook
 @_exported import PlaybookUI
 import SharedModels
+import SettingsFeature
 
 public enum AppScenarios {
 
@@ -31,6 +33,18 @@ public enum AppScenarios {
                     let memoThree = Memo(word: "Three", meaning: "Trzy")
                     return ([memoOne, memoTwo, memoThree], [memoOne.id])
                 }), animationSettings: .init()))
+            }
+        }
+
+        appPlaybook.addScenarios(of: "Settings") {
+            Scenario("Settings tab", layout: .fill) {
+                SettingsView(model: .init())
+            }
+        }
+
+        appPlaybook.addScenarios(of: "Memory Leak") {
+            Scenario("Memory Leak test tab", layout: .fill) {
+                MemoryLeakView()
             }
         }
 
