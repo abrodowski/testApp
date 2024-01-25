@@ -27,3 +27,12 @@ public class SettingsModel {
 
     public init() {}
 }
+
+protocol AutoCases {}
+
+enum Direction: AutoCases {
+    case north,
+         south,
+         east,
+         west
+}
