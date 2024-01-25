@@ -12,6 +12,7 @@
 		BF7630852B6177E300E72E1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7630842B6177E300E72E1C /* Assets.xcassets */; };
 		BF7630882B6177E300E72E1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7630872B6177E300E72E1C /* Preview Assets.xcassets */; };
 		BF7630A92B61786C00E72E1C /* PlaybookFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF7630A82B61786C00E72E1C /* PlaybookFeature */; };
+		BF7630AD2B62A96000E72E1C /* AppFeature in Embed Frameworks */ = {isa = PBXBuildFile; productRef = BF7BA0002B602B4600431F79 /* AppFeature */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF7B9FD02B6020A700431F79 /* testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9FCF2B6020A700431F79 /* testApp.swift */; };
 		BF7B9FD62B6020A800431F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7B9FD52B6020A800431F79 /* Assets.xcassets */; };
 		BF7B9FD92B6020A800431F79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7B9FD82B6020A800431F79 /* Preview Assets.xcassets */; };
@@ -37,6 +38,20 @@
 			remoteInfo = test;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF7630AE2B62A96000E72E1C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF7630AD2B62A96000E72E1C /* AppFeature in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BF7630752B61428400E72E1C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -207,6 +222,7 @@
 				BF7B9FC82B6020A600431F79 /* Sources */,
 				BF7B9FC92B6020A600431F79 /* Frameworks */,
 				BF7B9FCA2B6020A600431F79 /* Resources */,
+				BF7630AE2B62A96000E72E1C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -595,7 +611,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -631,7 +647,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
