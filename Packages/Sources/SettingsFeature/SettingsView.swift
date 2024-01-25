@@ -21,8 +21,8 @@ public struct SettingsView: View {
             }
             .navigationDestination(for: SettingsModel.Subscreen.self) { subscreen in
                 switch subscreen {
-                case .betaSettings:
                 #if DEBUG
+                case .betaSettings:
                     BetaSettingsView()
                 #endif
                 case .settings:

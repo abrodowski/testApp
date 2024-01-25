@@ -100,6 +100,6 @@ package.targets = package.targets.map { target in
 
 extension Product {
     static func singleTargetLibrary(_ name: String) -> Product {
-        .library(name: name, type: .dynamic, targets: [name])
+        .library(name: name, type: .static, targets: [name])
     }
 }
