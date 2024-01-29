@@ -10,6 +10,7 @@ let package = Package(
     ],
     products: [
         .singleTargetLibrary("AppFeature"),
+        .library(name: "AppFeatureStatic", type: .static, targets: ["AppFeature"]),
         .singleTargetLibrary("PlaybookFeature"),
     ],
     dependencies: [
