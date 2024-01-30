@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "dummypackage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/abrodowski/DummyPackage",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e61e1132414e2b88ea217eaf70675869d770aa38"
+      }
+    },
+    {
       "identity" : "inject",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/krzysztofzablocki/Inject.git",

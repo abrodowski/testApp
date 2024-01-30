@@ -1,3 +1,4 @@
+//import DummyPackage
 import HomeFeature
 import LifetimeTracker
 import MemoryLeakFeature
@@ -14,6 +15,7 @@ public struct AppView: View {
     @State private var homeModel = HomeModel()
 
     public init() {
+//        DummyClass()
         #if DEBUG
         LifetimeTracker.setup(
             onUpdate: LifetimeTrackerDashboardIntegration(

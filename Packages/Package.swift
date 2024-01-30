@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Main",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v17),
     ],
@@ -18,6 +19,7 @@ let package = Package(
         .package(url: "https://github.com/realm/SwiftLint", exact: "0.52.3"),
         .package(url: "https://github.com/krzysztofzablocki/LifetimeTracker.git", exact: "1.8.2"),
         .package(url: "https://github.com/playbook-ui/playbook-ios", exact: "0.3.4"),
+        .package(url: "https://github.com/abrodowski/DummyPackage", branch: "main"),
     ],
     targets: [
         .target(
@@ -29,6 +31,7 @@ let package = Package(
                 "SettingsFeature",
                 .product(name: "LifetimeTracker", package: "LifetimeTracker"),
                 "MemoryLeakFeature",
+                .product(name: "DummyPackage", package: "DummyPackage"),
             ]
         ),
         .testTarget(
@@ -42,6 +45,7 @@ let package = Package(
             dependencies: [
                 "SharedViews",
                 "SharedModels",
+                .product(name: "DummyPackage", package: "DummyPackage"),
             ]
         ),
         .testTarget(

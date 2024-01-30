@@ -25,6 +25,8 @@
 		BF7B9FEE2B6020A800431F79 /* testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9FED2B6020A800431F79 /* testUITests.swift */; };
 		BF7B9FF02B6020A800431F79 /* testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9FEF2B6020A800431F79 /* testUITestsLaunchTests.swift */; };
 		BF7BA0012B602B4600431F79 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF7BA0002B602B4600431F79 /* AppFeature */; };
+		BFE829F82B69076600467F6E /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BFE829F72B69076600467F6E /* InfoPlist.xcstrings */; };
+		BFE829F92B69076600467F6E /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BFE829F72B69076600467F6E /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,7 @@
 		BF7B9FE92B6020A800431F79 /* testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7B9FED2B6020A800431F79 /* testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testUITests.swift; sourceTree = "<group>"; };
 		BF7B9FEF2B6020A800431F79 /* testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BFE829F72B69076600467F6E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 		BF7B9FC32B6020A600431F79 = {
 			isa = PBXGroup;
 			children = (
+				BFE829F72B69076600467F6E /* InfoPlist.xcstrings */,
 				BF7630752B61428400E72E1C /* Launch Screen.storyboard */,
 				BF7B9FCE2B6020A600431F79 /* test */,
 				BF7B9FE22B6020A800431F79 /* testTests */,
@@ -384,6 +388,7 @@
 			files = (
 				BF7630E62B68000300E72E1C /* Launch Screen.storyboard in Resources */,
 				BF7630E72B68000300E72E1C /* Preview Assets.xcassets in Resources */,
+				BFE829F92B69076600467F6E /* InfoPlist.xcstrings in Resources */,
 				BF7630E82B68000300E72E1C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +399,7 @@
 			files = (
 				BF7630762B61428400E72E1C /* Launch Screen.storyboard in Resources */,
 				BF7B9FD92B6020A800431F79 /* Preview Assets.xcassets in Resources */,
+				BFE829F82B69076600467F6E /* InfoPlist.xcstrings in Resources */,
 				BF7B9FD62B6020A800431F79 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -750,7 +756,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -786,7 +792,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
