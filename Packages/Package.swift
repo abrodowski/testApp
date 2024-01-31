@@ -5,16 +5,21 @@ import PackageDescription
 
 let package = Package(
     name: "Main",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v17),
     ],
     products: [
-        .singleTargetLibrary("AppFeature")
+        .singleTargetLibrary("AppFeature"),
+        .library(name: "AppFeatureStatic", type: .static, targets: ["AppFeature"]),
+        .singleTargetLibrary("PlaybookFeature"),
     ],
     dependencies: [
         .package(url: "https://github.com/krzysztofzablocki/Inject.git", exact: "1.2.3"),
         .package(url: "https://github.com/realm/SwiftLint", exact: "0.52.3"),
         .package(url: "https://github.com/krzysztofzablocki/LifetimeTracker.git", exact: "1.8.2"),
+        .package(url: "https://github.com/playbook-ui/playbook-ios", exact: "0.3.4"),
+        .package(url: "https://github.com/abrodowski/DummyPackage", branch: "main"),
     ],
     targets: [
         .target(
@@ -25,6 +30,8 @@ let package = Package(
                 "HomeFeature",
                 "SettingsFeature",
                 .product(name: "LifetimeTracker", package: "LifetimeTracker"),
+                "MemoryLeakFeature",
+                .product(name: "DummyPackage", package: "DummyPackage"),
             ]
         ),
         .testTarget(
@@ -38,6 +45,7 @@ let package = Package(
             dependencies: [
                 "SharedViews",
                 "SharedModels",
+                .product(name: "DummyPackage", package: "DummyPackage"),
             ]
         ),
         .testTarget(
@@ -65,6 +73,25 @@ let package = Package(
                 .product(name: "LifetimeTracker", package: "LifetimeTracker"),
             ]
         ),
+        .target(
+            name: "PlaybookFeature",
+            dependencies: [
+                "HomeFeature",
+                "SettingsFeature",
+                "MemoryLeakFeature",
+                "SharedModels",
+                "Inject",
+                .product(name: "Playbook", package: "playbook-ios"),
+                .product(name: "PlaybookUI", package: "playbook-ios"),
+            ]
+        ),
+        .target(
+            name: "MemoryLeakFeature",
+            dependencies: [
+                "SharedViews",
+                "SharedModels",
+            ]
+        ),
     ]
 )
 
@@ -78,6 +105,6 @@ package.targets = package.targets.map { target in
 
 extension Product {
     static func singleTargetLibrary(_ name: String) -> Product {
-        .library(name: name, targets: [name])
+        .library(name: name, type: .dynamic, targets: [name])
     }
 }

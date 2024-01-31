@@ -1,4 +1,9 @@
+//import DummyPackage
+import HomeFeature
 import LifetimeTracker
+import MemoryLeakFeature
+import SettingsFeature
+import SharedModels
 import SharedViews
 import SwiftUI
 
@@ -6,7 +11,11 @@ public struct AppView: View {
 
     @ObserveInjection private var iO
 
+    @State private var settingsModel = SettingsModel()
+    @State private var homeModel = HomeModel()
+
     public init() {
+//        DummyClass()
         #if DEBUG
         LifetimeTracker.setup(
             onUpdate: LifetimeTrackerDashboardIntegration(
@@ -18,8 +27,22 @@ public struct AppView: View {
     }
 
     public var body: some View {
+        TabView {
+            HomeView(model: homeModel)
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
 
-        Text("Hello, World!")
-            .enableInjection()
+            SettingsView(model: settingsModel)
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
+
+            MemoryLeakView()
+                .tabItem {
+                    Label("Memory leak", systemImage: "memorychip")
+                }
+        }
+        .enableInjection()
     }
 }

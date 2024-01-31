@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PlaybookDemo.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>test.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>BF7B9FCB2B6020A600431F79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF7B9FDE2B6020A800431F79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF7B9FE82B6020A800431F79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

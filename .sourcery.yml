@@ -1,0 +1,8 @@
+configurations:
+    - sources:
+        include:
+            - Packages/Sources/
+      templates:
+          - Packages/Sources/SettingsFeature/CodeGen/Templates/
+      output: Packages/Sources/SettingsFeature/CodeGen/
+      baseIndentation: 4
